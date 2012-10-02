@@ -1,0 +1,22 @@
+{# src/Ideup/ProjectBundle/Resources/views/Project/project.html.twig #}
+{% extends 'IdeupProjectBundle::base.html.twig' %}
+
+{% block title %} Crear Nuevo Proyecto {% endblock%}
+
+{% block body %}
+    <header>
+        <h1> Crear Nuevo Proyecto </h1>
+    </header>
+	<p>Use el siguiente formulario:</p>
+    <form action="{{ path('IdeupProjectBundle_addProject') }}" method="post" {{ form_enctype(form) }} >
+        {{ form_errors(form) }}
+		{{ form_row(form.nombre) }}
+        {{ form_row(form.cordinador) }}
+        {{ form_row(form.horas) }}
+        {{ form_row(form.precioHora) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

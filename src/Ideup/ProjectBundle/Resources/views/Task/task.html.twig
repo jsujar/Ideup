@@ -1,0 +1,33 @@
+{# src/Ideup/ProjectBundle/Resources/views/Project/project.html.twig #}
+{% extends 'IdeupProjectBundle::base.html.twig' %}
+
+{% block title %} Tarea {{ task.nombre }} {% endblock%}
+
+{% block body %}
+    <header>
+        <h1> ID: {{ task.id }} - {{ task.nombre }}</h1>
+		<ul>
+			<li>Developer: {{ task.developer }}</li>
+			<li>Horas: {{ task.horas }}</li>
+			<li>Descripcion: {{ task.descripcion }}</li>
+		</ul>
+    </header>
+	<h3> Anotaciones </h3>
+	<ul>
+	{% for m in sms %}
+		<li>{{ m }}</li>
+	{% endfor %}
+	</ul>
+	<p> Envíe una nueva anotación para esta tarea</p>
+    <form action="{{ path('IdeupProjectBundle_message') }}" method="post" {{ form_enctype(form) }} >
+        {{ form_errors(form) }}
+        
+        {{ form_row(form.developer) }}
+        {{ form_row(form.task) }}
+        {{ form_row(form.message) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

@@ -1,0 +1,74 @@
+IdeupProjectBundle_homepage:
+    pattern:    /
+    defaults:   { _controller: IdeupProjectBundle:Default:index }
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_about:
+    pattern:    /about
+    defaults:   { _controller: IdeupProjectBundle:Default:about }
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_listProjects:
+    pattern:    /listado/proyectos
+    defaults:   { _controller: IdeupProjectBundle:Project:index}
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_listDevelopers:
+    pattern:    /listado/developers
+    defaults:   { _controller: IdeupProjectBundle:Developer:index}
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_project:
+    pattern:    /proyecto/{project_id}
+    defaults:   { _controller: IdeupProjectBundle:Project:project}
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_newProject:
+    pattern:    /new/proyecto
+    defaults:   { _controller: IdeupProjectBundle:Project:newProject}
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_addProject:
+    pattern:    /add/proyecto
+    defaults:   { _controller: IdeupProjectBundle:Project:addProject}
+    requirements:
+        _method:    GET|POST
+
+IdeupProjectBundle_message:
+    pattern:    /add/message
+    defaults:   { _controller: IdeupProjectBundle:Message:addMessage }
+    requirements:
+        _method:    GET|POST
+
+IdeupProjectBundle_listTasks:
+    pattern:    /listado/tasks
+    defaults:   { _controller: IdeupProjectBundle:Task:index}
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_task:
+    pattern:    /task/{task_id}
+    defaults:   { _controller: IdeupProjectBundle:Task:task}
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_newTask:
+    pattern:    /new/task
+    defaults:   { _controller: IdeupProjectBundle:Task:newTask}
+    requirements:
+        _method:    GET
+
+IdeupProjectBundle_addTask:
+    pattern:    /add/task
+    defaults:   { _controller: IdeupProjectBundle:Task:addTask}
+    requirements:
+        _method:    GET|POST
+
+
+

@@ -1,0 +1,16 @@
+{# src/Ideup/ProjectBundle/Resources/views/Project/about.html.twig #}
+{% extends 'IdeupProjectBundle::base.html.twig' %}
+
+{% block title %}Listado de Tareas {% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Listado de tareas activas</h1>
+    </header>
+	<p>Para crear una nueva haga clic <a href="/new/task">aquí</a></p>
+	<ul>
+	{% for t in tasks %}
+		<li>{{ t }} - <a href="/task/{{ t.id }}">Acceder</a></li>
+	{% endfor %}
+	</ul>
+{% endblock %}

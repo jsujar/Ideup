@@ -1,0 +1,22 @@
+{# src/Ideup/ProjectBundle/Resources/views/base.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ asset('bundles/ideupproject/css/style.css') }}" type="text/css" rel="stylesheet" />
+	<link href="{{ asset('bundles/ideupproject/css/form.css') }}" type="text/css" rel="stylesheet" />
+
+{% endblock %}
+
+{% block sidebar %}
+	<ul>
+		<li><a href="{{ path('IdeupProjectBundle_homepage') }}">Inicio</a></li>
+		<li><a href="{{ path('IdeupProjectBundle_about') }}">Sobre nosotros</a></li>
+		<li><a href="{{ path('IdeupProjectBundle_listProjects') }}">Listado Projectos</a></li>
+		<li><a href="{{ path('IdeupProjectBundle_listDevelopers') }}">Listado Developers</a></li>
+		<li><a href="{{ path('IdeupProjectBundle_listTasks') }}">Listado Tareas</a></li>
+	</ul>
+{% endblock %}
+{% block footer %}
+	Aplicación Test Symfony2 para Ideup
+{% endblock %}

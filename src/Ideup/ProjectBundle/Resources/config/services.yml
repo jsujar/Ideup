@@ -1,0 +1,7 @@
+parameters:
+#    ideup_project.example.class: Ideup\ProjectBundle\Example
+
+services:
+#    ideup_project.example:
+#        class: %ideup_project.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

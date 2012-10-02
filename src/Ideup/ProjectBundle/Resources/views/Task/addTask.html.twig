@@ -1,0 +1,23 @@
+{# src/Ideup/ProjectBundle/Resources/views/Project/project.html.twig #}
+{% extends 'IdeupProjectBundle::base.html.twig' %}
+
+{% block title %} Crear Nueva Tarea {% endblock%}
+
+{% block body %}
+    <header>
+        <h1> Crear Nueva Tarea </h1>
+    </header>
+	<p>Use el siguiente formulario:</p>
+    <form action="{{ path('IdeupProjectBundle_addTask') }}" method="post" {{ form_enctype(form) }} >
+        {{ form_errors(form) }}
+		{{ form_row(form.nombre) }}
+		{{ form_row(form.project) }}
+        {{ form_row(form.developer) }}
+        {{ form_row(form.horas) }}
+        {{ form_row(form.descripcion) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

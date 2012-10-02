@@ -1,0 +1,15 @@
+{# src/Ideup/ProjectBundle/Resources/views/Project/about.html.twig #}
+{% extends 'IdeupProjectBundle::base.html.twig' %}
+
+{% block title %}Listado Developers{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Listado de Desarrolladores Activos</h1>
+    </header>
+	<ul>
+	{% for d in developers %}
+		<li>{{ d }}</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

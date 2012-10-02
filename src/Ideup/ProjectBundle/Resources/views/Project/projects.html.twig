@@ -1,0 +1,16 @@
+{# src/Ideup/ProjectBundle/Resources/views/Project/about.html.twig #}
+{% extends 'IdeupProjectBundle::base.html.twig' %}
+
+{% block title %}Listado Proyectos{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Listado de Proyectos Activos</h1>
+    </header>
+	<p>Para crear uno nuevo haga clic <a href="/new/proyecto">aquí</a></p>
+	<ul>
+	{% for p in projects %}
+		<li>{{ p }} - <a href="/proyecto/{{ p.id }}">Acceder</a></li>
+	{% endfor %}
+	</ul>
+{% endblock %}
